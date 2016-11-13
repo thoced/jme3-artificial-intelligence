@@ -114,7 +114,7 @@ public class NavMeshPathfinder {
     public boolean computePath(Vector3f goal, DebugInfo debugInfo) {
         // get the cell that this point is in
         Vector3f newPos2d = new Vector3f(currentPos3d.x, 0, currentPos3d.z);
-        currentCell = navMesh.findClosestCell(newPos2d);
+        currentCell = navMesh.findClosestCell(currentPos3d); // modified newPos2d
         if (currentCell == null) {
             return false;
         }
@@ -122,7 +122,7 @@ public class NavMeshPathfinder {
         goalPos3d = goal;
         goalPos = new Vector2f(goalPos3d.getX(), goalPos3d.getZ());
         Vector3f goalPos2d = new Vector3f(goalPos.getX(), 0, goalPos.getY());
-        goalCell = navMesh.findClosestCell(goalPos2d);
+        goalCell = navMesh.findClosestCell(goalPos3d); // modified goalPos2d
         boolean result = buildNavigationPath(path, currentCell, currentPos3d, goalCell, goalPos3d, entityRadius, debugInfo);
         if (!result) {
             goalPos = null;
