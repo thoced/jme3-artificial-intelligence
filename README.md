@@ -14,4 +14,7 @@ Comment utiliser la librarie dans votre projet JMonkeyEngine :
 - compiler le projet et utiliser ensuite la librairie jm3-ai.jar dans le répertoire jme3-artificial-intelligence\AI\dist créé.
 
 
+ThoCed.
+
+
 
